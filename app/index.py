@@ -1,27 +1,30 @@
 import pynecone as pc
-from pcconfig import config
 
-docs_url = "https://pynecone.io/docs/getting-started/introduction"
-filename = f"{config.app_name}/{config.app_name}.py"
+from app import State
 
 
 def index() -> pc.Component:
     return pc.center(
         pc.vstack(
-            pc.heading("Welcome to Pynecone!", font_size="2em"),
-            pc.box("Get started by editing ", pc.code(filename, font_size="1em")),
-            pc.link(
-                "Check out our docs!",
-                href=docs_url,
-                border="0.1em solid",
-                padding="0.5em",
-                border_radius="0.5em",
-                _hover={
-                    "color": "rgb(107,99,246)",
-                },
+            pc.cond(
+                State.error_msg,
+                pc.heading(State.error_msg, color="red", font_size="1em"),
             ),
-            spacing="1.5em",
-            font_size="2em",
+            pc.heading("Gmail Sorter", font_size="1.5em"),
+            pc.divider(),
+            pc.button(
+                "Login with Google",
+                on_click=[State.get_authorization_url],
+                width="100%",
+                bg="#ea4335",
+                color="white",
+            ),
+            bg="white",
+            padding="2em",
+            shadow="lg",
+            border_radius="lg",
         ),
-        padding_top="10%",
+        width="100%",
+        height="100vh",
+        background="radial-gradient(circle at 22% 11%,rgba(62, 180, 137,.20),hsla(0,0%,100%,0) 19%),radial-gradient(circle at 82% 25%,rgba(33,150,243,.18),hsla(0,0%,100%,0) 35%),radial-gradient(circle at 25% 61%,rgba(250, 128, 114, .28),hsla(0,0%,100%,0) 55%)",  # noqa: E501
     )

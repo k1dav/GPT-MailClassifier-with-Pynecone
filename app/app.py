@@ -1,19 +1,12 @@
-from app.index import index
-from pcconfig import config
-
 import pynecone as pc
 
-docs_url = "https://pynecone.io/docs/getting-started/introduction"
-filename = f"{config.app_name}/{config.app_name}.py"
+from app import State
+from app.callback import callback
+from app.index import index
+from app.sorter import sorter
 
-
-class State(pc.State):
-    """The app state."""
-
-    pass
-
-
-# Add state and page to the app.
 app = pc.App(state=State)
 app.add_page(index)
+app.add_page(callback, on_load=State.login_google)
+app.add_page(sorter)
 app.compile()

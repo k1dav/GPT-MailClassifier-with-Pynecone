@@ -1,1 +1,2 @@
 pynecone~=0.1.24
+google-api-python-client~=2.86.0

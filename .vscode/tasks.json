@@ -10,7 +10,7 @@
 			"options": {
 				"cwd": "${workspaceFolder}",
 				"env": {
-					"CLERK_PUBLISHABLE_KEY": "xxx"
+					"CLERK_PUBLISHABLE_KEY": "pk_test_Y2xhc3NpYy1rYXR5ZGlkLTQ2LmNsZXJrLmFjY291bnRzLmRldiQ"
 				}
 			},
 			"label": "pc: run",
