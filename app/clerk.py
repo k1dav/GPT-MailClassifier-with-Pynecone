@@ -1,6 +1,6 @@
 import pynecone as pc
 
-from app.pcconfig import CLERK_PUBLISHABLE_KEY
+from pcconfig import CLERK_PUBLISHABLE_KEY
 
 
 class ClerkProvider(pc.Component):

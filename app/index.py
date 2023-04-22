@@ -5,7 +5,7 @@ docs_url = "https://pynecone.io/docs/getting-started/introduction"
 filename = f"{config.app_name}/{config.app_name}.py"
 
 
-def indexPage() -> pc.Component:
+def index() -> pc.Component:
     return pc.center(
         pc.vstack(
             pc.heading("Welcome to Pynecone!", font_size="2em"),
