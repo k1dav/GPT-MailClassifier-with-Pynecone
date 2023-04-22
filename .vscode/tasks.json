@@ -8,7 +8,10 @@
 				"run"
 			],
 			"options": {
-				"cwd": "${workspaceFolder}/app",
+				"cwd": "${workspaceFolder}/pynecone",
+				"env": {
+					"CLERK_PUBLISHABLE_KEY": "xxx"
+				}
 			},
 			"label": "pc: run",
 		}
